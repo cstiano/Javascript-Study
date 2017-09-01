@@ -1,0 +1,43 @@
+{
+  "name": "synaptic",
+  "version": "1.1.1",
+  "homepage": "https://github.com/cazala/synaptic",
+  "authors": [
+    "Juan Cazala <juancazala@gmail.com>"
+  ],
+  "description": "architecture-free neural network library for node.js and the browser",
+  "main": "./dist/synaptic.min.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "neural",
+    "network",
+    "deep",
+    "learning",
+    "machine",
+    "learning",
+    "lstm",
+    "perceptron"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.1",
+    "commit": "b611073c5d158a263aa5fded19a45022ca4df71a"
+  },
+  "_source": "https://github.com/cazala/synaptic.git",
+  "_target": "^1.1.1",
+  "_originalSource": "synaptic",
+  "_direct": true
+}
