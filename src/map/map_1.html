@@ -3,13 +3,85 @@
 <head>
 	
 	<title></title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+	
+	.navbar {
+    margin-bottom: 0;
+    background-color: #cc0000;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+</style>
+<!-- https://maxcdn.icons8.com/Share/icon/ios7/Cinema//anonymous_mask1600.png -->
+
 </head>
 <body>
-	<div id = "googleMap" style="width:100%;height:400px;"></div>
+
+			<nav class="navbar navbar-default navbar-fixed-top">
+			  <div class="container">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span> 
+			      </button>
+			      <a class="navbar-brand" href="#" style="padding:0px;"> <img src="https://maxcdn.icons8.com/Share/icon/ios7/Cinema//anonymous_mask1600.png" style="height:100%;"></a>
+			    </div>
+			    <div class="collapse navbar-collapse" id="myNavbar">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li><a href="#home">HOME</a></li>
+			        <li><a href="#about">ABOUT</a></li>
+			        <li><a href="#data">DATA</a></li>
+			        <li><a href="#contact">CONTACT</a></li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+
+
+
+
+
+
+	<!-- <div id = "googleMap" style="width:100%;height:90%;"></div> -->
+	<div id="googleMap" style="height:-webkit-fill-available;width:100%;"></div>
+	<!-- <script src="/socket.io/socket.io.js"></script> -->
 	<script>
+		// var socket = io('http://localhost:3001/');
+		// var listMarkers = [];
 		$(document).ready(function() {
 			$("#test2").hide();
+			// socket.emit('getDevices',{});
+			// socket.on('recDevices', function(data){
+			// 	listMarkers = listMarkers.concat(data);
+			// 	var html = "";
+			// 	html += "<p>"+ data +"</p>"
+			// 	$("#testDev").append(html);
+			// });
 		});
 			function myMap(){
 				var myCenter = new google.maps.LatLng(-8.055266, -34.951708);
@@ -29,6 +101,7 @@
 			}
 	</script>
 	<div id="test2"><p>Dale</p></div>
+	<div id="testDev"></div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVcmyMkb_kd1p0vZJ6H6angSlpFQqlwNs&callback=myMap"></script>
 </body>
 </html>
