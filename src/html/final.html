@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+<style>
+  /*#cc0000*/
+  .navbar {
+    margin-bottom: 0;
+    background-color: #5cdb95;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #05386b !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #05386b !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #05386b !important;
+}
+
+#font_nav{
+  color: #05386b;
+}
+
+</style>
+<!-- https://maxcdn.icons8.com/Share/icon/ios7/Cinema//anonymous_mask1600.png -->
+
+</head>
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
+      <button class="w3-bar-item w3-button w3-large"
+      onclick="w3_close()">Close &times;</button>
+
+      <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#demo"><i class="material-icons" style="font-size:15px;color:red">directions_bus</i> 223 | CDU (Varzea) <i class="material-icons" style="font-size:15px;color:red">access_alarms</i> 60 min <i class="material-icons" style="font-size:15px;color:red">airline_seat_recline_normal</i>  100% </button>
+      <!-- <i class="material-icons" style="font-size:15px">expand_more</i> -->
+    <!-- expand_less -->
+      <div id="demo" class="collapse">
+          <p style="font-size:20px; background-color: "><i class="material-icons" style="font-size:20px;color:red">airline_seat_recline_normal</i> 100% - 55/55<br>
+          <i class="material-icons" style="font-size:20px">rv_hookup</i>  50 km/h<br>
+          <i class="fa fa-thermometer-half" style="font-size:20px"></i>  25 ºC<br>
+          <i class="material-icons" style="font-size:20px;color:red">error</i> 2 sound warnings</p>
+      </div>
+  </div>
+
+
+
+  <div id="main">
+    <nav class="navbar navbar-default navbar-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span> 
+          </button>
+          <a id="mypage" class="navbar-brand" href="#" style="padding:0px;"> <img src="/home/cristiano/Documentos/Programming/Javascript/Javascript-Study/src/html/Mobbi_logo_4.png" style="height:100%;"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right" id="font_nav">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#data">DATA</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="googleMap" style="height:-webkit-fill-available;width:100%;"></div>
+  </div>
+
+
+  <script>
+
+    function w3_open() {
+      document.getElementById("main").style.marginLeft = "35%";
+      document.getElementById("mySidebar").style.width = "35%";
+      document.getElementById("mySidebar").style.display = "block";
+      // document.getElementById("openNav").style.display = 'none';
+    }
+    function w3_close() {
+      document.getElementById("main").style.marginLeft = "0%";
+      document.getElementById("mySidebar").style.display = "none";
+    }
+
+    var control = 0;
+    $("#mypage").click(function(){
+      if(!control){
+        control = 1;
+        w3_open();
+      }
+      else{
+        control = 0;
+        w3_close();
+      }
+      console.log(control);
+    });
+
+    $(document).ready(function() {
+      $("#test2").hide();
+    });
+      function myMap(){
+
+        var icone = {
+          url: "/home/cristiano/Documentos/Programming/Javascript/Javascript-Study/src/html/icon_map_small.png",
+          scaledSize: new google.maps.Size(30, 40)
+        }
+        var myCenter = new google.maps.LatLng(-8.055266, -34.951708);
+        var mapProp = {
+          center: new google.maps.LatLng(-8.055266, -34.951708),
+          zoom: 15
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({position: myCenter, icon : icone});
+        marker.setMap(map);
+        
+        google.maps.event.addListener(marker,'click',function() {
+          $(document).ready(function(){
+            $("#test2").toggle();
+          });
+          });
+      }
+  </script>
+  <div id="test2"><p>Dale</p></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVcmyMkb_kd1p0vZJ6H6angSlpFQqlwNs&callback=myMap"></script>
+</body>
+</html>
