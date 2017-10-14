@@ -2,16 +2,34 @@
 <html>
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <body>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large"
   onclick="w3_close()">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <!-- <a href="#" class="w3-bar-item w3-button">Link 1</a>
   <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a> -->
+  <!-- style="font-size:30px;color:red" -->
+  <!-- <i class="fa fa-bus" style="color:red"></i> -->
+  <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#demo"><i class="material-icons" style="font-size:15px;color:red">directions_bus</i> 223 | CDU (Varzea) <i class="material-icons" style="font-size:15px;color:red">access_alarms</i> 60 min <i class="material-icons" style="font-size:15px;color:red">airline_seat_recline_normal</i>  100% </button>
+  <!-- <i class="material-icons" style="font-size:15px">expand_more</i> -->
+<!-- expand_less -->
+  <div id="demo" class="collapse">
+      <p style="font-size:20px; background-color: "><i class="material-icons" style="font-size:20px;color:red">airline_seat_recline_normal</i> 100% - 55/55<br>
+      <i class="material-icons" style="font-size:20px">rv_hookup</i>  50 km/h<br>
+      <i class="fa fa-thermometer-half" style="font-size:20px"></i>  25 ºC<br>
+      <i class="material-icons" style="font-size:20px;color:red">error</i> 2 sound warnings</p>
+  </div>
 </div>
 
 <div id="main">
@@ -34,9 +52,11 @@
 </div>
 
 <script>
+
+
 function w3_open() {
-  document.getElementById("main").style.marginLeft = "25%";
-  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("main").style.marginLeft = "35%";
+  document.getElementById("mySidebar").style.width = "35%";
   document.getElementById("mySidebar").style.display = "block";
   // document.getElementById("openNav").style.display = 'none';
 }
