@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
-
 <style>
   /*#cc0000*/
   .navbar {
@@ -45,6 +43,66 @@
   color: #05386b;
 }
 
+#logo{
+  padding-top: 5px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+}
+
+#icons_front_bus{
+  font-size:20px;
+  color:#05386b;
+}
+
+.info_buses{
+  background-color: #bcffd6;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  border-left: 10px solid #05386b;
+}
+
+#bus_name{
+  border-bottom: 1px solid black;
+}
+
+.info_buses_item{
+  text-align: center;
+  border-bottom: 1px solid #05386b;
+}
+
+#last_info_item{
+  border-bottom: 0px;
+  margin-bottom: 5px;
+}
+
+.icon_info_bus{
+  font-size:20px;
+  margin-top:5px;
+}
+
+#mySidebar{
+  background-color: #05386b;
+}
+
+#close_but:hover{
+  color: #05386b !important;
+  background-color: #5cdb95 !important;
+}
+
+#close_but:hover div{
+  color: #05386b !important;
+  background-color: #5cdb95 !important;
+}
+
+.list-group-item{
+  /*border-radius: 12px;*/
+  border-top: 2px solid #5cdb95;
+  border-bottom: 2px solid #5cdb95;
+}
+
 </style>
 <!-- https://maxcdn.icons8.com/Share/icon/ios7/Cinema//anonymous_mask1600.png -->
 
@@ -52,21 +110,32 @@
 <body>
 
 <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-left" style="display:none" id="mySidebar">
-      <button class="w3-bar-item w3-button w3-large"
-      onclick="w3_close()">Close &times;</button>
-
-      <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#demo"><i class="material-icons" style="font-size:15px;color:red">directions_bus</i> 223 | CDU (Varzea) <i class="material-icons" style="font-size:15px;color:red">access_alarms</i> 60 min <i class="material-icons" style="font-size:15px;color:red">airline_seat_recline_normal</i>  100% </button>
-      <!-- <i class="material-icons" style="font-size:15px">expand_more</i> -->
-    <!-- expand_less -->
-      <div id="demo" class="collapse">
-          <p style="font-size:20px; background-color: "><i class="material-icons" style="font-size:20px;color:red">airline_seat_recline_normal</i> 100% - 55/55<br>
-          <i class="material-icons" style="font-size:20px">rv_hookup</i>  50 km/h<br>
-          <i class="fa fa-thermometer-half" style="font-size:20px"></i>  25 ºC<br>
-          <i class="material-icons" style="font-size:20px;color:red">error</i> 2 sound warnings</p>
+      <button class="w3-bar-item w3-button w3-large" id="close_but"
+      ><div style="color:#5cdb95;">Close &times;</div></button>
+      <div class="list-group">
+        <a class="list-group-item" data-toggle="collapse" data-target="#demo">
+          <div id="bus_name">
+          <i id = "icons_front_bus" class="material-icons" >directions_bus</i> 223 | CDU (Varzea)
+          </div>
+          <div style="margin-top: 7px;">
+            <i id = "icons_front_bus" class="material-icons" >access_alarms</i> 60 min <i id = "icons_front_bus" class="material-icons">airline_seat_recline_normal</i>  100% 
+          </div>
+        </a>
+        <div id="demo" class="collapse info_buses">
+            <div class="info_buses_item"><i class="material-icons icon_info_bus">airline_seat_recline_normal</i>: 100% - 55/55
+            </div>
+            <div class="info_buses_item">
+            <i class="material-icons icon_info_bus">rv_hookup</i>:  50 km/h
+            </div>
+            <div class="info_buses_item">  
+            <i class="fa fa-thermometer-half icon_info_bus"></i>:  25 ºC
+            </div>
+            <div id="last_info_item" class="info_buses_item">
+            <i class="material-icons icon_info_bus" style="color:red">error</i> : 2 (sound warnings)
+            </div>
+        </div>
       </div>
   </div>
-
-
 
   <div id="main">
     <nav class="navbar navbar-default navbar-top">
@@ -77,7 +146,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span> 
           </button>
-          <a id="mypage" class="navbar-brand" href="#" style="padding:0px;"> <img src="/home/cristiano/Documentos/Programming/Javascript/Javascript-Study/src/html/Mobbi_logo_4.png" style="height:100%;"></a>
+          <a id="logo" class="navbar-brand" href="#"> <img src="Mobbi_logo_4.png" style="height:100%;"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right" id="font_nav">
@@ -89,12 +158,11 @@
         </div>
       </div>
     </nav>
-    <div id="googleMap" style="height:-webkit-fill-available;width:100%;"></div>
+    <div id="googleMap" style="height:100vh;width:100%;"></div>
   </div>
 
 
   <script>
-
     function w3_open() {
       document.getElementById("main").style.marginLeft = "35%";
       document.getElementById("mySidebar").style.width = "35%";
@@ -107,7 +175,7 @@
     }
 
     var control = 0;
-    $("#mypage").click(function(){
+    $("#logo").click(function(){
       if(!control){
         control = 1;
         w3_open();
@@ -119,13 +187,27 @@
       console.log(control);
     });
 
+
+    $("#close_but").click(function(){
+      if(!control){
+        control = 1;
+        w3_open();
+      }
+      else{
+        control = 0;
+        w3_close();
+      }
+      console.log(control);
+    });
+
+
     $(document).ready(function() {
       $("#test2").hide();
     });
       function myMap(){
 
         var icone = {
-          url: "/home/cristiano/Documentos/Programming/Javascript/Javascript-Study/src/html/icon_map_small.png",
+          url: "icon_map_small.png",
           scaledSize: new google.maps.Size(30, 40)
         }
         var myCenter = new google.maps.LatLng(-8.055266, -34.951708);
@@ -140,8 +222,16 @@
         google.maps.event.addListener(marker,'click',function() {
           $(document).ready(function(){
             $("#test2").toggle();
+            if(!control){
+              control = 1;
+              w3_open();
+            }
+            else{
+              control = 0;
+              w3_close();
+            }
           });
-          });
+        });
       }
   </script>
   <div id="test2"><p>Dale</p></div>
