@@ -1,6 +1,6 @@
-var test = [{data:'15:00', quant:5},{data:"15:20", quant:8},{data:"15:40", quant:1.2},{data:"16:00", quant:60},
-{data:"16:20", quant:45},{data:"16:40", quant:12},{data:"17:00", quant:23},{data:"17:20", quant:15},
-{data:"17:40", quant:4},{data:"18:00", quant:3}];
+var test = [{data:1, quant:5},{data:2, quant:8},{data:3, quant:1.2},{data:4, quant:60},
+{data:5, quant:45},{data:6, quant:12},{data:7, quant:23},{data:8, quant:15},
+{data:9, quant:4},{data:10, quant:3}];
 
 var test2 = [{data:1, quant:6},{data:2, quant:47},{data:3, quant:50},{data:4, quant:32},
 {data:5, quant:48},{data:6, quant:23},{data:7, quant:28},{data:8, quant:34},
@@ -33,7 +33,7 @@ var trace2 = {
   type: 'bar'
 };
 
-var data = [trace1];
+var data = [trace1, trace2];
 
 // var layout = {barmode: 'stack'};
 
