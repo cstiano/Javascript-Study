@@ -43,4 +43,4 @@ var layout = {
   height: 500
 };
 
-Plotly.newPlot('myDiv', data, layout);
+Plotly.newPlot('histoPlotDiv', data, layout);

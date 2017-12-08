@@ -1,12 +1,20 @@
 var dt = new Date();
 
-var test = [{data:1, quant:5},{data:2, quant:8},{data:3, quant:1.2},{data:4, quant:60},
-{data:5, quant:45},{data:6, quant:12},{data:7, quant:23},{data:8, quant:15},
-{data:9, quant:4},{data:10, quant:3}];
+// var test = [{data:1, quant:5},{data:2, quant:8},{data:3, quant:1.2},{data:4, quant:60},
+// {data:5, quant:45},{data:6, quant:12},{data:7, quant:23},{data:8, quant:15},
+// {data:9, quant:4},{data:10, quant:3}];
 
-var test2 = [{data:1, quant:6},{data:2, quant:47},{data:3, quant:50},{data:4, quant:32},
-{data:5, quant:48},{data:6, quant:23},{data:7, quant:28},{data:8, quant:34},
-{data:9, quant:18},{data:10, quant:6}];
+// var test2 = [{data:1, quant:6},{data:2, quant:47},{data:3, quant:50},{data:4, quant:32},
+// {data:5, quant:48},{data:6, quant:23},{data:7, quant:28},{data:8, quant:34},
+// {data:9, quant:18},{data:10, quant:6}];
+
+var test = [{data:"13:00", quant:5},{data:"13:20", quant:8},{data:"13:40", quant:1.2},{data:"14:00", quant:60},
+{data:"14:20", quant:45},{data:"14:40", quant:12},{data:"15:00", quant:23},{data:"15:20", quant:15},
+{data:"15:40", quant:4},{data:"16:00", quant:3}];
+
+var test2 = [{data:"13:00", quant:6},{data:"13:20", quant:47},{data:"13:40", quant:50},{data:"14:00", quant:32},
+{data:"14:20", quant:48},{data:"14:40", quant:23},{data:"15:00", quant:28},{data:"15:20", quant:34},
+{data:"15:40", quant:18},{data:"16:00", quant:6}];
 
 var xt = [];
 var yt = [];
@@ -27,7 +35,7 @@ trace1 = {
   x: xt,
   y: yt,
   mode: 'lines',
-  name: 'Red',
+  name: 'Entering Passengers',
   line: {
     color: 'rgb(219, 64, 82)',
     width: 3
@@ -39,7 +47,7 @@ trace2 = {
   x: xt2,
   y: yt2,
   mode: 'lines',
-  name: 'Blue',
+  name: 'Leaving Passengers',
   line: {
     color: 'rgb(55, 128, 191)',
     width: 3
@@ -47,7 +55,7 @@ trace2 = {
 };
 
 var layout = {
-  width: 500,
+  width: 700,
   height: 500
 };
 
